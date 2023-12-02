@@ -5,4 +5,4 @@ So far I've participated in year 2023
 
 | Year      | Solutions |
 | ----------- | ----------- |
-| 2023      | [Soultions](htpps://github.com/dickeyy/adventofcode/2023)       |
+| 2023      | [Soultions](/2023)       |
