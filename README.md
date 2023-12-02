@@ -1,4 +1,8 @@
-# Advent of Code 2023
-These are my solutions for [Advent Of Code 2023](https://adventofcode.com)
+# Advent of Code 
+These are my solutions for [Advent Of Code](https://adventofcode.com)
 
-This is my first year doing it and all my solutions probably suck but, they work. (No GitHub Copilot or ChatGPT obviously)
+So far I've participated in year 2023
+
+| Year      | Solutions |
+| ----------- | ----------- |
+| 2023      | [Soultions](htpps://github.com/dickeyy/adventofcode/2023)       |
