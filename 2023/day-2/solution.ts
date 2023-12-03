@@ -1,10 +1,8 @@
 // get and format the data
 async function loadData() {
-
     // get the data from the file
     const file = Bun.file('./day-2/data.txt')
     return await file.text()
-
 }
 
 // part one
