@@ -5,4 +5,4 @@ So far I've participated in year 2023
 
 | Year      | Solutions | Stars ⭐️ |
 | ----------- | ----------- | ----------- |
-| 2023 (in progress)    | [Soultions](/2023)| 4/50 (so far) |
+| 2023 (in progress)    | [Soultions](/2023)| 8/50 (so far) |
