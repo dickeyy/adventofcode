@@ -77,7 +77,7 @@ function main(list:string[]) {
 
 function loadFromFile(filename:string) {
     // loads our data from a file
-    let file = Bun.file("./day-1/" + filename)
+    let file = Bun.file(filename)
     return file.text()
 }
 
