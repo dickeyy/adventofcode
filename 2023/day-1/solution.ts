@@ -1,5 +1,4 @@
-function unscramble(str:string) {
-
+function unscramble(str: string) {
     // part 1
     // create a new variable -> value
     // loop through the str, if the character is a digit, add it to an array of digits in that string
@@ -11,42 +10,47 @@ function unscramble(str:string) {
 
     let arr = []; // array of numbers found in the string
 
-    const wordNums = ["one","two","three","four","five","six","seven","eight","nine"] // array of word number values
-    const letters = ["o","t","f","s","e","n"] // array of letters that the nums start with
+    const wordNums = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]; // array of word number values
+    const letters = ["o", "t", "f", "s", "e", "n"]; // array of letters that the nums start with
 
-    for (let i=0; i<str.length; i++) { // loop through each character in the string
+    for (let i = 0; i < str.length; i++) {
+        // loop through each character in the string
 
-        if (letters.includes(str[i])) {  // if the character is one of the letters
-            for (let x=0; x<wordNums.length; x++) { // then loop through the number words
-                if (wordNums[x][0] == str[i]) { // if the number word starts with the character
-                    let sub = str.substring(i, i + wordNums[x].length) // create a substring the length of the number word
-                    let translated = translate(sub) // attempt to translate the substring to a number
-                    if (translated) { // if it translates, then it is good to go 
-                        arr.push(translated.toString()) // add it to the array of numbers found
+        if (letters.includes(str[i])) {
+            // if the character is one of the letters
+            for (let x = 0; x < wordNums.length; x++) {
+                // then loop through the number words
+                if (wordNums[x][0] == str[i]) {
+                    // if the number word starts with the character
+                    let sub = str.substring(i, i + wordNums[x].length); // create a substring the length of the number word
+                    let translated = translate(sub); // attempt to translate the substring to a number
+                    if (translated) {
+                        // if it translates, then it is good to go
+                        arr.push(translated.toString()); // add it to the array of numbers found
                     }
                 }
             }
-        } else { // character is not one of the letters for numbers
-            if (isDigit(str[i])) { // check if the character is a digit
-                arr.push(str[i]) // if it is, push it to the array
+        } else {
+            // character is not one of the letters for numbers
+            if (isDigit(str[i])) {
+                // check if the character is a digit
+                arr.push(str[i]); // if it is, push it to the array
             }
         }
-
     }
 
-    return arr[0] + arr[arr.length - 1] // return the first and last values of the array
-
+    return arr[0] + arr[arr.length - 1]; // return the first and last values of the array
 }
 
-function isDigit(str:string) {
-    const digits = ["0","1","2","3","4","5","6","7","8","9"] // possible digits
+function isDigit(str: string) {
+    const digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]; // possible digits
     if (digits.includes(str)) {
-        return true
+        return true;
     }
-    return false
+    return false;
 }
 
-function translate(str:string) {
+function translate(str: string) {
     // take a string number (one, two, three, ...)
     // turn it into a digit and return
 
@@ -54,36 +58,35 @@ function translate(str:string) {
     // loop through the list
     // if the string is in the list, return the index + 1
 
-    const numbers = ["one","two","three","four","five","six","seven","eight","nine"] // possible numbers
+    const numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]; // possible numbers
 
-    if (numbers.includes(str)) { // if the word given is a number word
-        return numbers.indexOf(str) + 1 // return the value of the word (index in the array + 1)
+    if (numbers.includes(str)) {
+        // if the word given is a number word
+        return numbers.indexOf(str) + 1; // return the value of the word (index in the array + 1)
     } else {
-        return undefined
+        return undefined;
     }
 }
 
-function main(list:string[]) {
-    
+function main(list: string[]) {
     let total = 0;
 
-    for (let i=0; i<list.length; i++) {
-        total += Number(unscramble(list[i]))
+    for (let i = 0; i < list.length; i++) {
+        total += Number(unscramble(list[i]));
     }
 
-    return total
-
+    return total;
 }
 
-function loadFromFile(filename:string) {
+function loadFromFile(filename: string) {
     // loads our data from a file
-    let file = Bun.file(filename)
-    return file.text()
+    let file = Bun.file(filename);
+    return file.text();
 }
 
-function toArray(data:string) {
+function toArray(data: string) {
     // turn a long list of text to an array
-    return data.split("\n")
+    return data.split("\n");
 }
 
-console.log(main(toArray(await loadFromFile("data.txt")))) // outputs our solution
+console.log(main(toArray(await loadFromFile("data.txt")))); // outputs our solution
