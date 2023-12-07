@@ -1,78 +1,92 @@
 // get and format the data
 async function loadData() {
     // get the data from the file
-    const file = Bun.file('data.txt')
-    return await file.text()
+    const file = Bun.file("data.txt");
+    return await file.text();
 }
 
-// part 1 
-function partOne(data:string) {
+// part 1
+function partOne(data: string) {
+    let total = 0;
 
-    let total = 0
-    
     // split each line
-    const lines = data.split("\n")
+    const lines = data.split("\n");
 
     for (const line of lines) {
-        let cardValue = 0
+        let cardValue = 0;
 
-        const split = line.split(":")
-        const winningNums = split[1].split("|")[0].trim().split(" ").filter(str => str.trim())
-        const ourNums = split[1].split("|")[1].trim().split(" ").filter(str => str.trim())
+        const split = line.split(":");
+        const winningNums = split[1]
+            .split("|")[0]
+            .trim()
+            .split(" ")
+            .filter((str) => str.trim());
+        const ourNums = split[1]
+            .split("|")[1]
+            .trim()
+            .split(" ")
+            .filter((str) => str.trim());
 
-        for (let i=0; i<ourNums.length; i++) {
+        for (let i = 0; i < ourNums.length; i++) {
             // check if our num is in the winningnums array
             if (winningNums.includes(ourNums[i])) {
-                if (cardValue == 0) cardValue ++
+                if (cardValue == 0) cardValue++;
                 else {
-                    cardValue *= 2
+                    cardValue *= 2;
                 }
             }
         }
 
-        total += cardValue
+        total += cardValue;
     }
 
-    return total
-
+    return total;
 }
 
 // partOne(await loadData())
 
-// part 2 
+// part 2
 function partTwo(data: string) {
-    
-    const copies:any = {}
+    const copies: any = {};
 
     // split each line
-    const lines = data.split("\n")
+    const lines = data.split("\n");
 
-    for (let i=lines.length-1; i>=0; i--) {
+    for (let i = lines.length - 1; i >= 0; i--) {
+        const split = lines[i].split(":");
+        const winningNums = split[1]
+            .split("|")[0]
+            .trim()
+            .split(" ")
+            .filter((str) => str.trim());
+        const ourNums = split[1]
+            .split("|")[1]
+            .trim()
+            .split(" ")
+            .filter((str) => str.trim());
 
-        const split = lines[i].split(":") 
-        const winningNums = split[1].split("|")[0].trim().split(" ").filter(str => str.trim())
-        const ourNums = split[1].split("|")[1].trim().split(" ").filter(str => str.trim())
-
-        let winners = 0
-        for (let i=0; i<ourNums.length; i++) {
+        let winners = 0;
+        for (let i = 0; i < ourNums.length; i++) {
             // check if our num is in the winningnums array
             if (winningNums.includes(ourNums[i])) {
-                winners ++
+                winners++;
             }
         }
 
         let newCards = winners;
-        for (let w=1; w<=winners; w++) {
-            if (i+w < lines.length) {
-                newCards += copies[i+w]
+        for (let w = 1; w <= winners; w++) {
+            if (i + w < lines.length) {
+                newCards += copies[i + w];
             }
         }
 
-        copies[i] = newCards
+        copies[i] = newCards;
     }
 
-    return (Object.values(copies) as number[]).reduce((partialSum, a) => partialSum + (parseInt(String(a)) || 0), 0) + lines.length;
-
+    return (
+        (Object.values(copies) as number[]).reduce((partialSum, a) => partialSum + (parseInt(String(a)) || 0), 0) +
+        lines.length
+    );
 }
 
 // partTwo(await loadData())
