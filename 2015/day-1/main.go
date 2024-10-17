@@ -7,16 +7,19 @@ import (
 )
 
 func main() {
+	utils.ParseFlags()
+	part := utils.GetPart()
+
 	data := utils.ReadFile("./data.txt")
-	res1, res2 := notQuiteLisp(data)
-	println(res1, res2)
+	res := notQuiteLisp(data, part)
+	println(res)
 }
 
-func notQuiteLisp(data string) (int, int) {
+func notQuiteLisp(data string, part int) int {
 	split := strings.Split(data, "")
 
+	out := 0
 	floor := 0
-	posOfBasement := 0
 
 	for i := 0; i < len(split); i++ {
 		// part 1
@@ -27,12 +30,16 @@ func notQuiteLisp(data string) (int, int) {
 		}
 
 		// part 2
-		if floor == -1 {
-			posOfBasement = i + 1
+		if part == 2 && floor == -1 {
+			out = i + 1
 			break
 		}
 
 	}
 
-	return floor, posOfBasement
+	if part == 1 {
+		return floor
+	}
+
+	return out
 }
