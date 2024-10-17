@@ -1,6 +1,6 @@
-## Advent of Code 2023
+## Advent of Code 2024
 
-This was my first year doing Advent of Code! All my solutions are in Typescript using Bun.
+All of my solutions this year are in Go.
 
 | Day | Solution                 | Difficulty (IMO) |
 | --- | ------------------------ | ---------------- |
