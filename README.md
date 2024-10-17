@@ -2,8 +2,7 @@
 
 These are my solutions for [Advent Of Code](https://adventofcode.com)
 
-So far I've participated in year 2023
-
 | Year               | Solutions          | Stars ⭐️      |
 | ------------------ | ------------------ | -------------- |
-| 2023 (in progress) | [Soultions](/2023) | 16/50 (so far) |
+| 2024 (coming soon) | [Soultions](/2024) | 0/50 (so far)  |
+| 2023               | [Soultions](/2023) | 16/50 (so far) |
