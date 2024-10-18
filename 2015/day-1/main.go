@@ -12,7 +12,7 @@ func main() {
 
 	data := utils.ReadFile("./data.txt")
 	res := notQuiteLisp(data, part)
-	println(res)
+	println("Output: ", res)
 }
 
 func notQuiteLisp(data string, part int) int {
