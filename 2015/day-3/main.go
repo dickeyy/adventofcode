@@ -12,8 +12,7 @@ func main() {
 	part := utils.GetPart()
 
 	data := utils.ReadFile("./data.txt")
-	res := pshiav(data, part)
-	println(res)
+	utils.Output(pshiav(data, part))
 }
 
 // ^ = north, > = east, v = south, < = west
