@@ -8,4 +8,4 @@ _I am currently working on 2015 while I wait for 2024 to come out_
 | ---------------------------- | ------------------ | ---------- | ------------- |
 | 2024 (coming soon)           | [Soultions](/2024) | Go         | 0/50          |
 | 2023 (My first year of AoC!) | [Soultions](/2023) | TypeScript | 26/50         |
-| 2015                         | [Soultions](/2015) | Go         | 4/50 (so far) |
+| 2015                         | [Soultions](/2015) | Go         | 6/50 (so far) |
