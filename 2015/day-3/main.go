@@ -29,17 +29,18 @@ func pshiav(data string, part int) int {
 	cs := 0 // current santa -> 0 = santa 1, 1 = santa 2
 
 	for _, line := range strings.Split(data, "") {
-		var currentCC []int
+		var chc []int // coordinate of the current house as apposed to the santa (part 2)
+
 		if cs == 0 {
 			cc1 = moveSanta(cc1, line)
-			currentCC = cc1
+			chc = cc1
 		} else if cs == 1 && part == 2 {
 			cc2 = moveSanta(cc2, line)
-			currentCC = cc2
+			chc = cc2
 		}
 
-		if !alreadyVisted(vc, currentCC) {
-			vc = append(vc, append([]int(nil), currentCC...))
+		if !alreadyVisted(vc, chc) {
+			vc = append(vc, append([]int(nil), chc...))
 		}
 
 		if part == 2 {
