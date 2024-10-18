@@ -13,8 +13,7 @@ func main() {
 	part := utils.GetPart()
 
 	data := utils.ReadFile("./data.txt")
-	res := iWTTWBNM(data, part)
-	println("Output: ", res)
+	utils.Output(iWTTWBNM(data, part))
 }
 
 func iWTTWBNM(data string, part int) int {
