@@ -27,6 +27,6 @@ func GetPart() int {
 }
 
 func Output(data interface{}) {
-	println("Output: ", pink, fmt.Sprintf("%v", data))
+	println("Output: ", pink, fmt.Sprintf("%v%s", data, darkGray)) // ends in dark gray so that if you use the time command it looks nicer
 	// eventually ill add other stuff here like copying to clipboard and stuff
 }

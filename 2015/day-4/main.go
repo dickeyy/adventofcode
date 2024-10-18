@@ -7,8 +7,7 @@ func main() {
 	part := utils.GetPart()
 
 	data := utils.ReadFile("./data.txt")
-	res := tiss(data, part)
-	println("Output: ", res)
+	utils.Output(tiss(data, part))
 }
 
 func tiss(data string, part int) int {
