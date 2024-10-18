@@ -11,8 +11,7 @@ func main() {
 	part := utils.GetPart()
 
 	data := utils.ReadFile("./data.txt")
-	res := notQuiteLisp(data, part)
-	println("Output: ", res)
+	utils.Output(notQuiteLisp(data, part))
 }
 
 func notQuiteLisp(data string, part int) int {
