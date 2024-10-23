@@ -11,10 +11,10 @@ func main() {
 	part := utils.GetPart()
 
 	data := utils.ReadFile("./data.txt")
-	utils.Output(notQuiteLisp(data, part))
+	utils.Output(day1(data, part))
 }
 
-func notQuiteLisp(data string, part int) int {
+func day1(data string, part int) int {
 	split := strings.Split(data, "")
 
 	out := 0
