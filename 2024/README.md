@@ -1,4 +1,4 @@
-## Advent of Code 2024
+## [Advent of Code 2024](https://adventofcode.com/2024)
 
 All of my solutions this year are in Go (1.23.2)
 

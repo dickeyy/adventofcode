@@ -1,4 +1,4 @@
-## Advent of Code 2023
+## [Advent of Code 2023](https://adventofcode.com/2023)
 
 This was my first year doing Advent of Code! All my solutions are in Typescript using Bun.
 
