@@ -3,9 +3,13 @@ package utils
 import (
 	"flag"
 	"fmt"
+	"time"
 )
 
-var part int
+var (
+	part  int
+	timer bool
+)
 
 const (
 	colorReset = "\033[0m"
@@ -15,11 +19,15 @@ const (
 
 func init() {
 	flag.IntVar(&part, "p", 1, "part 1 or 2")
+	flag.BoolVar(&timer, "t", false, "time the solution")
 }
 
 func ParseFlags() {
 	flag.Parse()
 	fmt.Printf("%sRunning part %d...%s\n", darkGray, part, colorReset)
+	if timer {
+		startTime = time.Now()
+	}
 }
 
 func GetPart() int {
@@ -27,6 +35,25 @@ func GetPart() int {
 }
 
 func Output(data interface{}) {
-	println("Output: ", pink, fmt.Sprintf("%v%s", data, darkGray)) // ends in dark gray so that if you use the time command it looks nicer
-	// eventually ill add other stuff here like copying to clipboard and stuff
+	var elapsed time.Duration
+	if timer {
+		elapsed = time.Since(startTime)
+	}
+
+	if timer {
+		fmt.Printf("%sOutput: %s%v %s(in %v)%s\n",
+			darkGray, pink, data, darkGray, elapsed, colorReset)
+	} else {
+		fmt.Printf("%sOutput: %s%v%s\n",
+			darkGray, pink, data, colorReset)
+	}
+}
+
+// StartTimer starts timing if timer flag is enabled
+var startTime time.Time
+
+func StartTimer() {
+	if timer {
+		startTime = time.Now()
+	}
 }
