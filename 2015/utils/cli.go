@@ -37,7 +37,7 @@ func GetPart() int {
 func Output(data interface{}) {
 	var elapsed time.Duration
 	if timer {
-		elapsed = time.Since(startTime)
+		elapsed = time.Since(startTime).Round(time.Microsecond)
 	}
 
 	if timer {
