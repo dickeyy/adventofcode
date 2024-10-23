@@ -1,4 +1,4 @@
-## Advent of Code 2015
+## [Advent of Code 2015](https://adventofcode/2015)
 
 I went back to 2015, in 2024, and did a bunch of days because I was bored.
 All of my solutions this year are in Go (1.23.2)
