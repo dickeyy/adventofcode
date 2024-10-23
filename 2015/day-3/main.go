@@ -12,11 +12,11 @@ func main() {
 	part := utils.GetPart()
 
 	data := utils.ReadFile("./data.txt")
-	utils.Output(pshiav(data, part))
+	utils.Output(day3(data, part))
 }
 
 // ^ = north, > = east, v = south, < = west
-func pshiav(data string, part int) int {
+func day3(data string, part int) int {
 	vc := make([][]int, 0) // houses we have already visited
 
 	cc1 := make([]int, 2) // current coordinate santa 1

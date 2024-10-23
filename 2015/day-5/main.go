@@ -11,10 +11,10 @@ func main() {
 	part := utils.GetPart()
 
 	data := utils.ReadFile("./data.txt")
-	utils.Output(dhhieft(data, part))
+	utils.Output(day5(data, part))
 }
 
-func dhhieft(data string, part int) int {
+func day5(data string, part int) int {
 	count := 0
 
 	for _, line := range strings.Split(data, "\n") {

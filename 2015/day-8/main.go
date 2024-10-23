@@ -11,10 +11,10 @@ func main() {
 	part := utils.GetPart()
 
 	data := utils.ReadFile("./data.txt")
-	utils.Output(matchsticks(data, part))
+	utils.Output(day8(data, part))
 }
 
-func matchsticks(data string, part int) int {
+func day8(data string, part int) int {
 	out := 0
 
 	for _, line := range strings.Split(data, "\n") {

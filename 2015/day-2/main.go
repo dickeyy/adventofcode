@@ -13,10 +13,10 @@ func main() {
 	part := utils.GetPart()
 
 	data := utils.ReadFile("./data.txt")
-	utils.Output(iWTTWBNM(data, part))
+	utils.Output(day2(data, part))
 }
 
-func iWTTWBNM(data string, part int) int {
+func day2(data string, part int) int {
 	split := strings.Split(data, "\n")
 	out := 0
 

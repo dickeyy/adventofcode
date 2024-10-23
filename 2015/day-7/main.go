@@ -12,7 +12,7 @@ func main() {
 	part := utils.GetPart()
 
 	data := utils.ReadFile("./data.txt")
-	utils.Output(sar(data, part))
+	utils.Output(day7(data, part))
 }
 
 // ---
@@ -31,7 +31,7 @@ type Wire struct {
 var instructions []Instruction
 var wires map[string]*Wire
 
-func sar(data string, part int) int {
+func day7(data string, part int) int {
 	// Parse instructions only once
 	if len(instructions) == 0 {
 		for _, inst := range strings.Split(data, "\n") {

@@ -12,10 +12,10 @@ func main() {
 	part := utils.GetPart()
 
 	data := utils.ReadFile("./data.txt")
-	utils.Output(pafh(data, part))
+	utils.Output(day6(data, part))
 }
 
-func pafh(data string, part int) int {
+func day6(data string, part int) int {
 	grid := make([][]int, 1000)
 
 	for i := range grid {

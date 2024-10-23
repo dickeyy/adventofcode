@@ -14,10 +14,10 @@ func main() {
 	part := utils.GetPart()
 
 	data := utils.ReadFile("./data.txt")
-	utils.Output(tiss(data, part))
+	utils.Output(day4(data, part))
 }
 
-func tiss(key string, part int) int {
+func day4(key string, part int) int {
 	num := 0
 	z := "00000"
 	if part == 2 {
