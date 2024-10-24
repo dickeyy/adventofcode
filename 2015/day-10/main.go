@@ -15,6 +15,16 @@ func main() {
 	utils.Output(day10(data, part))
 }
 
+/*
+	Some comments after finishing this:
+
+	- 	Doing this recursively is bad because we have much higher overhead than we need,
+		a better approach would be to do this iteratively.
+	- 	We could also pre-allocate the string builder's capacity to get an estimate using Conway constant.
+	- 	Given this is exponential (1.3x (conway constant) each iter.) this algo is O(n^{1.3}) thats pretty bad lol
+	-	That said, it does work and is still fast at 50 iterations (~150ms), higher than that though it would be very slow.
+*/
+
 func day10(data string, part int) int {
 	var iterations int
 
