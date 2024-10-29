@@ -12,8 +12,8 @@ func main() {
 	utils.ParseFlags()
 	part := utils.GetPart()
 
-	data := utils.ReadFile("./input.txt")
-	utils.Output(day9(data, part))
+	input := utils.ReadFile("./input.txt")
+	utils.Output(day9(input, part))
 }
 
 // ---
@@ -29,9 +29,9 @@ type Graph struct {
 	Distances map[string]Distance
 }
 
-func day9(data string, part int) int {
+func day9(input string, part int) int {
 	graph := newGraph()
-	graph.populate(data)
+	graph.populate(input)
 
 	return int(findPath(graph, part == 1))
 }

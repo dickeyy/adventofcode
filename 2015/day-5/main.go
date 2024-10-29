@@ -10,14 +10,14 @@ func main() {
 	utils.ParseFlags()
 	part := utils.GetPart()
 
-	data := utils.ReadFile("./input.txt")
-	utils.Output(day5(data, part))
+	input := utils.ReadFile("./input.txt")
+	utils.Output(day5(input, part))
 }
 
-func day5(data string, part int) int {
+func day5(input string, part int) int {
 	count := 0
 
-	for _, line := range strings.Split(data, "\n") {
+	for _, line := range strings.Split(input, "\n") {
 		if part == 1 {
 			if isNicePt1(line) {
 				count++

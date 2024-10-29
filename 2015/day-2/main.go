@@ -12,12 +12,12 @@ func main() {
 	utils.ParseFlags()
 	part := utils.GetPart()
 
-	data := utils.ReadFile("./input.txt")
-	utils.Output(day2(data, part))
+	input := utils.ReadFile("./input.txt")
+	utils.Output(day2(input, part))
 }
 
-func day2(data string, part int) int {
-	split := strings.Split(data, "\n")
+func day2(input string, part int) int {
+	split := strings.Split(input, "\n")
 	out := 0
 
 	for i := 0; i < len(split); i++ {

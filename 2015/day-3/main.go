@@ -11,12 +11,12 @@ func main() {
 	utils.ParseFlags()
 	part := utils.GetPart()
 
-	data := utils.ReadFile("./input.txt")
-	utils.Output(day3(data, part))
+	input := utils.ReadFile("./input.txt")
+	utils.Output(day3(input, part))
 }
 
 // ^ = north, > = east, v = south, < = west
-func day3(data string, part int) int {
+func day3(input string, part int) int {
 	vc := make([][]int, 0) // houses we have already visited
 
 	cc1 := make([]int, 2) // current coordinate santa 1
@@ -27,7 +27,7 @@ func day3(data string, part int) int {
 
 	cs := 0 // current santa -> 0 = santa 1, 1 = santa 2
 
-	for _, line := range strings.Split(data, "") {
+	for _, line := range strings.Split(input, "") {
 		var chc []int // coordinate of the current house as apposed to the santa (part 2)
 
 		if cs == 0 {

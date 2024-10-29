@@ -11,8 +11,8 @@ func main() {
 	utils.ParseFlags()
 	part := utils.GetPart()
 
-	data := utils.ReadFile("./input.txt")
-	utils.Output(day10(data, part))
+	input := utils.ReadFile("./input.txt")
+	utils.Output(day10(input, part))
 }
 
 /*
@@ -25,7 +25,7 @@ func main() {
 	-	That said, it does work and is still fast at 50 iterations (~150ms), higher than that though it would be very slow.
 */
 
-func day10(data string, part int) int {
+func day10(input string, part int) int {
 	var iterations int
 
 	if part == 1 {
@@ -34,7 +34,7 @@ func day10(data string, part int) int {
 		iterations = 50
 	}
 
-	out := lookAndSay(data, iterations)
+	out := lookAndSay(input, iterations)
 
 	return len(out)
 }

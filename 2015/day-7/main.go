@@ -11,8 +11,8 @@ func main() {
 	utils.ParseFlags()
 	part := utils.GetPart()
 
-	data := utils.ReadFile("./input.txt")
-	utils.Output(day7(data, part))
+	input := utils.ReadFile("./input.txt")
+	utils.Output(day7(input, part))
 }
 
 // ---
@@ -31,10 +31,10 @@ type Wire struct {
 var instructions []Instruction
 var wires map[string]*Wire
 
-func day7(data string, part int) int {
+func day7(input string, part int) int {
 	// Parse instructions only once
 	if len(instructions) == 0 {
-		for _, inst := range strings.Split(data, "\n") {
+		for _, inst := range strings.Split(input, "\n") {
 			instructions = append(instructions, parseInstruction(inst))
 		}
 	}

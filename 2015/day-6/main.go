@@ -11,18 +11,18 @@ func main() {
 	utils.ParseFlags()
 	part := utils.GetPart()
 
-	data := utils.ReadFile("./input.txt")
-	utils.Output(day6(data, part))
+	input := utils.ReadFile("./input.txt")
+	utils.Output(day6(input, part))
 }
 
-func day6(data string, part int) int {
+func day6(input string, part int) int {
 	grid := make([][]int, 1000)
 
 	for i := range grid {
 		grid[i] = make([]int, 1000)
 	}
 
-	for _, inst := range strings.Split(data, "\n") {
+	for _, inst := range strings.Split(input, "\n") {
 		op, x1, y1, x2, y2 := processInstruction(inst)
 
 		for x := x1; x <= x2; x++ {
