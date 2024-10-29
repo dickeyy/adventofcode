@@ -15,3 +15,4 @@ All of my solutions this year are in Go (1.23.2)
 | 8   | [Solution](/2015/day-8/main.go)  | 4/10             |
 | 9   | [Solution](/2015/day-9/main.go)  | 8/10             |
 | 10  | [Solution](/2015/day-10/main.go) | 3/10             |
+| 11  | [Solution](/2015/day-11/main.go) | 7/10             |
