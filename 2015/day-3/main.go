@@ -9,10 +9,10 @@ import (
 
 func main() {
 	utils.ParseFlags()
-	part := utils.GetPart()
+	p := utils.GetPart()
 
-	input := utils.ReadFile("./input.txt")
-	utils.Output(day3(input, part))
+	i := utils.ReadFile("./input.txt")
+	utils.Output(day3(i, p))
 }
 
 // ^ = north, > = east, v = south, < = west
