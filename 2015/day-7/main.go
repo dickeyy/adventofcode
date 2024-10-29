@@ -11,7 +11,7 @@ func main() {
 	utils.ParseFlags()
 	part := utils.GetPart()
 
-	data := utils.ReadFile("./data.txt")
+	data := utils.ReadFile("./input.txt")
 	utils.Output(day7(data, part))
 }
 
