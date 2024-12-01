@@ -20,16 +20,7 @@ func main() {
 func day1(input string, part int) int {
 	out := 0
 
-	left := make([]int, 0)
-	right := make([]int, 0)
-
-	for _, line := range strings.Split(input, "\n") {
-		l, _ := strconv.Atoi(strings.Split(line, "   ")[0])
-		r, _ := strconv.Atoi(strings.Split(line, "   ")[1])
-
-		left = append(left, l)
-		right = append(right, r)
-	}
+	left, right := parseInput(input)
 
 	if part == 1 {
 		// sort left and right in ascending order
@@ -56,4 +47,19 @@ func day1(input string, part int) int {
 	}
 
 	return out
+}
+
+func parseInput(input string) ([]int, []int) {
+	left := make([]int, 0)
+	right := make([]int, 0)
+
+	for _, line := range strings.Split(input, "\n") {
+		l, _ := strconv.Atoi(strings.Split(line, "   ")[0])
+		r, _ := strconv.Atoi(strings.Split(line, "   ")[1])
+
+		left = append(left, l)
+		right = append(right, r)
+	}
+
+	return left, right
 }
