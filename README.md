@@ -2,8 +2,6 @@
 
 These are my solutions for [Advent Of Code](https://adventofcode.com)
 
-_I am currently working on 2015 while I wait for 2024 to come out_
-
 | Year                         | Solutions          | Language   | Stars ⭐️      |
 | ---------------------------- | ------------------ | ---------- | -------------- |
 | 2024 (Current year)          | [Soultions](/2024) | Go         | 2/50           |
