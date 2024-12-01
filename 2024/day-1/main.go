@@ -1,6 +1,7 @@
 package main
 
 import (
+	"math"
 	"sort"
 	"strconv"
 	"strings"
@@ -37,11 +38,7 @@ func day1(input string, part int) int {
 
 		// for each pair of numbers, find the difference
 		for i := 0; i < len(left); i++ {
-			if left[i] > right[i] {
-				out += left[i] - right[i]
-			} else {
-				out += right[i] - left[i]
-			}
+			out += int(math.Abs(float64(left[i] - right[i])))
 		}
 	} else {
 		// make a hashmap for right frequency
