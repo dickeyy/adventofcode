@@ -39,7 +39,6 @@ echo "}" >> "$folder_name/main.go"
 echo "" >> "$folder_name/main.go"
 
 touch "$folder_name/input.txt"
-touch "$folder_name/problem.md"
 
 echo -e "\033[90mCreated boilerplate for day ${num} in ./${folder_name}"
 
