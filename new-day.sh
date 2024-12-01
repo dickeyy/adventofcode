@@ -1,22 +1,23 @@
 #!/bin/bash
 
-# Check if a number parameter is provided
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 <number>"
+# Check if a day parameter is provided
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 <year> <day>"
     exit 1
 fi
 
-# Store the number parameter
-num=$1
+# Store the parameters
+year=$1
+day=$2
 
-# Create folder name with the number
-folder_name="day-${num}"
+# Create folder name with the day
+folder_name="${year}/day-${day}"
 
-echo -e "\033[90mSetting up day ${num}"
+echo -e "\033[90mSetting up ${year} day ${day}"
 
 # Create the folder
 mkdir -p "$folder_name"
-echo -e "Created folder ./${folder_name}"
+echo -e "Created folder ${folder_name}"
 
 # Create our files
 echo "package main" > "$folder_name/main.go"
@@ -30,18 +31,18 @@ echo "    utils.ParseFlags()" >> "$folder_name/main.go"
 echo "    p := utils.GetPart()" >> "$folder_name/main.go"
 echo "" >> "$folder_name/main.go"
 echo "    i := utils.ReadFile(\"./input.txt\")" >> "$folder_name/main.go"
-echo "    utils.Output(day${num}(i, p))" >> "$folder_name/main.go"
+echo "    utils.Output(day${day}(i, p))" >> "$folder_name/main.go"
 echo "}" >> "$folder_name/main.go"
 echo "" >> "$folder_name/main.go"
-echo "func day${num}(input string, part int) int {" >> "$folder_name/main.go"
+echo "func day${day}(input string, part int) int {" >> "$folder_name/main.go"
 echo "    return 0" >> "$folder_name/main.go"
 echo "}" >> "$folder_name/main.go"
 echo "" >> "$folder_name/main.go"
 
 touch "$folder_name/input.txt"
 
-echo -e "\033[90mCreated boilerplate for day ${num} in ./${folder_name}"
+echo -e "\033[90mCreated boilerplate for ${year} day ${day} in ${folder_name}"
 
-# done :)
+# Done
 cd "$folder_name"
-echo -e "\n\033[35mGood luck \033[90mon day ${num}!"
+echo -e "\n\033[35mGood luck \033[90mon day ${day}!"
