@@ -16,6 +16,7 @@ func main() {
 	utils.Output(day3(i, p))
 }
 
+// we don't even need the part paramater
 func day3(input string, part int) int {
 	muls := getMulNums(input, part == 2)
 	products := getProducts(muls)
@@ -23,17 +24,10 @@ func day3(input string, part int) int {
 }
 
 func getMulNums(input string, conditional bool) [][]int {
-	// `mul\((\d+),(\d+)\)` <- this is the regex for the mul pattern matching
-	// `(mul\((\d+),(\d+)\)|do\(\)|dont\(\))` <- this is the conditional regex pattern
+	// mul\(\d+,\d+\)|do\(\)|don't\(\) is the regex for both parts
 	muls := make([][]int, 0)
 
-	var re *regexp.Regexp
-	if conditional {
-		re = regexp.MustCompile(`(mul\((\d+),(\d+)\)|do\(\)|don't\(\))`)
-	} else {
-		re = regexp.MustCompile(`mul\((\d+),(\d+)\)`)
-	}
-
+	re := regexp.MustCompile(`mul\(\d+,\d+\)|do\(\)|don't\(\)`)
 	matches := re.FindAllStringSubmatchIndex(input, -1)
 
 	allowMul := true
@@ -47,11 +41,9 @@ func getMulNums(input string, conditional bool) [][]int {
 			} else if op == "don't()" {
 				allowMul = false
 			}
+		}
 
-			if allowMul && strings.HasPrefix(op, "mul") {
-				muls = append(muls, extractNumsFromMul(op))
-			}
-		} else {
+		if allowMul && strings.HasPrefix(op, "mul") {
 			muls = append(muls, extractNumsFromMul(op))
 		}
 	}
