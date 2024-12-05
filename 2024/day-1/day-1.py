@@ -1,4 +1,4 @@
-data = open("input.txt").read()
+data = open("../../inputs/2024/day-1/input.txt").read()
 
 left = []
 right = []
@@ -12,7 +12,7 @@ left.sort()
 right.sort()
 
 out = 0
-part = int(input())
+part = int(input("Part 1 or 2? "))
 
 if part == 1:
     for i in range(len(left)):
