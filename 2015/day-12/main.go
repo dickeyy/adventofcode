@@ -12,7 +12,7 @@ func main() {
 	utils.ParseFlags()
 	p := utils.GetPart()
 
-	i := utils.ReadFile("./input.json")
+	i := utils.ReadFile("../../inputs/2015/day-12/input.json")
 	utils.Output(day12(i, p))
 }
 

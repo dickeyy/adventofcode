@@ -12,7 +12,7 @@ func main() {
 	utils.ParseFlags()
 	p := utils.GetPart()
 
-	i := utils.ReadFile("./input.txt")
+	i := utils.ReadFile("../../inputs/2015/day-2/input.txt")
 	utils.Output(day2(i, p))
 }
 
