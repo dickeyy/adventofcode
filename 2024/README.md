@@ -9,4 +9,5 @@ I am also documenting my solutions and thought process for each day this year. Y
 | 1   | [Solution](day-1/main.go) | 1/10             |
 | 2   | [Solution](day-2/main.go) | 3/10             |
 | 3   | [Solution](day-3/main.go) | 2/10             |
-| 4   | [Solution](day-4/main.go) | 6/10             |
+| 4   | [Solution](day-4/main.go) | 4/10             |
+| 5   | [Solution](day-5/main.go) | 5/10             |
