@@ -22,3 +22,4 @@ All of my solutions this year are in Go (1.23.2)
 | 15  | [Solution](/2015/day-15/main.go) | 6/10             |
 | 16  | [Solution](/2015/day-16/main.go) | 3/10             |
 | 17  | [Solution](/2015/day-17/main.go) | 4/10             |
+| 18  | [Solution](/2015/day-18/main.go) | 7/10             |
