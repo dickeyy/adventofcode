@@ -89,4 +89,4 @@ function toArray(data: string) {
     return data.split("\n");
 }
 
-console.log(main(toArray(await loadFromFile("data.txt")))); // outputs our solution
+console.log(main(toArray(await loadFromFile("../../inputs/2023/day-1/input.txt")))); // outputs our solution
