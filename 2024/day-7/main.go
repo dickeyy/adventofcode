@@ -33,12 +33,7 @@ func day7(input string, part int) int {
 	}
 
 	// sum the valid keys
-	sum := 0
-	for _, key := range validKeys {
-		sum += key
-	}
-
-	return sum
+	return utils.SumNums(validKeys)
 }
 
 func parseInput(input string) map[int][]int {
