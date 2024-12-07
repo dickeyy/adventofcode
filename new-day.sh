@@ -37,7 +37,7 @@ echo "    utils.Output(day${day}(i, p))" >> "$folder_name/main.go"
 echo "}" >> "$folder_name/main.go"
 echo "" >> "$folder_name/main.go"
 echo "func day${day}(input string, part int) int {" >> "$folder_name/main.go"
-echo "    return 0" >> "$folder_name/main.go"
+echo "    return -1" >> "$folder_name/main.go"
 echo "}" >> "$folder_name/main.go"
 echo "" >> "$folder_name/main.go"
 
