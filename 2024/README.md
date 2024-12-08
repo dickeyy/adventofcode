@@ -13,3 +13,4 @@ I am also documenting my solutions and thought process for each day this year. Y
 | 5   | [Solution](day-5/main.go) | 5/10             |
 | 6   | [Solution](day-6/main.go) | 6/10             |
 | 7   | [Solution](day-7/main.go) | 2/10             |
+| 8   | [Solution](day-8/main.go) | 6/10             |
