@@ -38,11 +38,7 @@ func day8(input string, part int) int {
 	grid := parseGrid(input)
 	frequencies := getFrequencies(grid)
 
-	if part == 1 {
-		return countAntinodes(grid, frequencies, false)
-	}
-
-	return countAntinodes(grid, frequencies, true)
+	return countAntinodes(grid, frequencies, part == 2)
 }
 
 // parseGrid converts the input string into a 2D rune slice
