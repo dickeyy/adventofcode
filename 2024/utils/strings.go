@@ -14,3 +14,8 @@ func GetIntsInString(s string) []int {
 	}
 	return ints
 }
+
+func AtoiNoErr(s string) int {
+	i, _ := strconv.Atoi(s)
+	return i
+}
