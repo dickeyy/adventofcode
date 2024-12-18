@@ -165,7 +165,7 @@ func isValidMove(pos Coord, grid map[Coord]bool, end Coord) bool {
 	return true
 }
 
-// --- Priority Queue Stuff ---
+// --- Priority Queue Stuff (probably should move to a util but whatever for now) ---
 func (pq PQueue) Len() int           { return len(pq) }
 func (pq PQueue) Less(i, j int) bool { return pq[i].priority < pq[j].priority }
 func (pq PQueue) Swap(i, j int) {
