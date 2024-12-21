@@ -25,3 +25,4 @@ I am also documenting my solutions and thought process for each day this year. Y
 | 17  | [Solution](day-17/main.go) | ⭐️⭐️ | `392µs & 335µs`         | 7/10             | [Read on AoC](https://adventofcode.com/2024/day/17) |
 | 18  | [Solution](day-18/main.go) | ⭐️⭐️ | `8.356ms & 2.502s`      | 5/10             | [Read on AoC](https://adventofcode.com/2024/day/18) |
 | 19  | [Solution](day-19/main.go) | ⭐️⭐️ | `40.534ms & 41.296ms`   | 3/10             | [Read on AoC](https://adventofcode.com/2024/day/19) |
+| 20  | [Solution](day-20/main.go) | ⭐️⭐️ | `7.006ms & 285.621ms`   | 6/10             | [Read on AoC](https://adventofcode.com/2024/day/20) |
