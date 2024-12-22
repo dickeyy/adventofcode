@@ -1,0 +1,95 @@
+package main
+
+import (
+	"strings"
+	"github.com/dickeyy/adventofcode/2024/utils"
+)
+
+func main() {
+	utils.ParseFlags()
+	p := utils.GetPart()
+
+	i := utils.ReadFile("../../inputs/2024/day-22/input.txt")
+	utils.Output(day22(i, p))
+}
+
+const PRUNE_NUM = 16777216
+
+func day22(input string, part int) int {
+	nums := parseInput(input)
+
+	if part == 1 {
+		sum := 0
+		for _, num := range nums {
+			sn := getSecretNum(num, 2000)
+			sum += sn
+		}
+		return sum
+	}
+
+	// Part 2
+	changeMap := map[[4]int]int{}
+	for _, secretNum := range nums {
+		changes := make([]int, 2000)
+		currentPrice := secretNum % 10
+		currentChangeMap := map[[4]int]int{}
+
+		for i := range 2000 {
+			secretNum = step(secretNum)
+			newPrice := secretNum % 10
+			diff := newPrice - currentPrice
+
+			changes[i] = diff
+			if i >= 3 {
+				ch := [4]int{changes[i-3], changes[i-2], changes[i-1], changes[i]}
+				if _, ok := currentChangeMap[ch]; !ok {
+					currentChangeMap[ch] = newPrice
+				}
+			}
+
+			currentPrice = newPrice
+		}
+
+		for changeSeq, bananas := range currentChangeMap {
+			if _, ok := changeMap[changeSeq]; !ok {
+				changeMap[changeSeq] = 0
+			}
+			changeMap[changeSeq] += bananas
+		}
+	}
+
+	maxBananas := -1
+	for _, v := range changeMap {
+		if v > maxBananas {
+			maxBananas = v
+		}
+	}
+	return maxBananas
+}
+
+func parseInput(input string) []int {
+	l := strings.Split(input, "\n")
+	ints := make([]int, len(l))
+	for i, line := range l {
+		ints[i] = utils.AtoiNoErr(line)
+	}
+	return ints
+}
+
+func step(num int) int {
+	num = prune(mix(num*64, num))   // Step 1
+	num = prune(mix(num/32, num))   // Step 2
+	num = prune(mix(num*2048, num)) // Step 3
+	return num
+}
+
+func getSecretNum(num, iters int) int {
+	for range iters {
+		num = step(num)
+	}
+	return num
+}
+
+// -- Helpers --
+func mix(a, b int) int { return a ^ b }
+func prune(a int) int  { return a % PRUNE_NUM }
