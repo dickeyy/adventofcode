@@ -24,3 +24,4 @@ All of my solutions this year are in Go (1.23.2)
 | 16  | [Solution](/2015/day-16/main.go) | ⭐️⭐️ | `1.747ms & 955µs`      | 3/10             | [Read on AoC](https://adventofcode.com/2015/day/16) |
 | 17  | [Solution](/2015/day-17/main.go) | ⭐️⭐️ | `1.512ms & 890µs`      | 4/10             | [Read on AoC](https://adventofcode.com/2015/day/17) |
 | 18  | [Solution](/2015/day-18/main.go) | ⭐️⭐️ | `28.086ms & 27.072ms`  | 7/10             | [Read on AoC](https://adventofcode.com/2015/day/18) |
+| 19  | [Solution](/2015/day-19/main.go) | ⭐️⭐️ | `280µs & 10.76ms`      | 4/10             | [Read on AoC](https://adventofcode.com/2015/day/19) |
