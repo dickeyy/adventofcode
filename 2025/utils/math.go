@@ -35,3 +35,11 @@ func GCD(a, b int) int {
 func LCM(a, b int) int {
 	return a * b / GCD(a, b)
 }
+
+// FloorDiv is like math.FloorDiv but for integers
+func FloorDiv(a, b int) int {
+	if a >= 0 {
+		return a / b
+	}
+	return (a - b + 1) / b
+}
